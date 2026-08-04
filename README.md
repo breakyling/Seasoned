@@ -79,7 +79,7 @@ A mod that attempts to rebalance Balatro.
 - **Money Gain:** $5 -> $2
 
 ### Loyalty Card
-- **Old:** X4 Mult every 10 hands played
+- **Old:** X4 Mult every 6 hands played
 - **New:** X3 Mult every 10 hands scored
 
 ### Superposition
