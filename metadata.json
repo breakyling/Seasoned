@@ -1,0 +1,9 @@
+{
+	"id": "Seasoned",
+	"name": "Seasoned",
+	"author": ["breakyling"],
+	"description": "A mod that attempts to rebalance Balatro.",
+	"prefix": "ssnd",
+	"main_file": "main.lua",
+	"version": "1.0.0-beta"
+}

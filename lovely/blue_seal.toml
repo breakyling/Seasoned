@@ -1,0 +1,72 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+
+# Put playing cards with Blue Seals to the top of the draw pile at the start of a blind
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = """
+G.deck:shuffle('nr'..G.GAME.round_resets.ante)
+"""
+position = "after"
+payload = """
+if G.deck and G.deck.cards then
+    local normal = {}
+    local blue = {}
+
+    for _, card in ipairs(G.deck.cards) do
+        if card.seal == 'Blue' then
+            table.insert(blue, card)
+        else
+            table.insert(normal, card)
+        end
+    end
+
+    for _, card in ipairs(blue) do
+        table.insert(normal, card)
+    end
+
+    G.deck.cards = normal
+    G.deck:set_ranks()
+end
+"""
+match_indent = true
+
+
+# Remove the Blue Seal's vanilla ability of creating planets
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = """
+if self.seal == 'Blue' and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit and not self.ability.extra_enhancement then
+    local card_type = 'Planet'
+    G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+    G.E_MANAGER:add_event(Event({
+        trigger = 'before',
+        delay = 0.0,
+        func = (function()
+            if G.GAME.last_hand_played then
+                local _planet = 0
+                for k, v in pairs(G.P_CENTER_POOLS.Planet) do
+                    if v.config.hand_type == G.GAME.last_hand_played then
+                        _planet = v.key
+                    end
+                end
+                if _planet == 0 then _planet = nil end
+                local card = create_card(card_type,G.consumeables, nil, nil, nil, nil, _planet, 'blusl')
+                card:add_to_deck()
+                G.consumeables:emplace(card)
+                G.GAME.consumeable_buffer = 0
+            end
+            return true
+        end)}))
+    card_eval_status_text(self, 'extra', nil, nil, nil, {message = localize('k_plus_planet'), colour = G.C.SECONDARY_SET.Planet})
+    ret.effect = true
+end
+"""
+position = "at"
+payload = """
+"""
+match_indent = true

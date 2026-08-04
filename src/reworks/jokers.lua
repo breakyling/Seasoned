@@ -1,0 +1,116 @@
+-- Greedy Joker: +3 Mult -> +4 Mult
+SMODS.Joker:take_ownership("greedy_joker", {
+    config = {
+        extra = {
+            s_mult = 4,
+            suit = "Diamonds",
+        }
+    },
+})
+
+-- Lusty Joker: +3 Mult -> +4 Mult
+SMODS.Joker:take_ownership("lusty_joker", {
+    config = {
+        extra = {
+            s_mult = 4,
+            suit = "Hearts",
+        }
+    },
+})
+
+-- Wrathful Joker: +3 Mult -> +4 Mult
+SMODS.Joker:take_ownership("wrathful_joker", {
+    config = {
+        extra = {
+            s_mult = 4,
+            suit = "Spades",
+        }
+    },
+})
+
+-- Gluttenous Joker: +3 Mult -> +4 Mult
+SMODS.Joker:take_ownership("gluttenous_joker", {
+    config = {
+        extra = {
+            s_mult = 4,
+            suit = "Clubs",
+        }
+    },
+})
+
+-- Buffed Satellite: Money gain increased from $1 to $2
+SMODS.Joker:take_ownership("satellite", {
+    config = {extra = 2},
+})
+
+-- Nerfed Photograph: Common -> Uncommon
+SMODS.Joker:take_ownership("photograph", {
+    rarity = 2,
+})
+
+-- Nerfed Hanging Chad: Common -> Uncommon
+SMODS.Joker:take_ownership("hanging_chad", {
+    rarity = 2,
+    cost = 5,
+})
+
+-- Nerfed Mail and Rebate: Money gain reduced from $5 to $2
+SMODS.Joker:take_ownership("mail", {
+    config = {extra = 2},
+})
+
+--[[
+Changed Loyalty Card
+- Old: x3 Mult for every hands played
+- New: x3 Mult for every 10 cards scored
+]]
+SMODS.Joker:take_ownership("loyalty_card", {
+    config = {extra = {
+        Xmult = 3,
+        every = 10,
+        remaining = 10,
+    }},
+
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.Xmult,
+                card.ability.extra.every,
+                card.ability.extra.remaining,
+            },
+        }
+    end,
+
+    calculate = function(self, card, context)
+        if context.cardarea == G.play and context.individual then
+            if card.ability.extra.remaining == 1 then
+                card.ability.extra.remaining = 10
+                return {
+                    xmult = card.ability.extra.Xmult,
+                }
+            else
+                card.ability.extra.remaining = card.ability.extra.remaining - 1
+            end
+        end
+    end,
+})
+
+--[[
+Changed Superposition
+- Old: Create a Tarot card if poker hand contains an Ace and a Straight
+- New: Straights can wrap around
+- Rarity increased from Common to Uncommon
+- Cost increased from $4 to $7
+]]
+SMODS.Joker:take_ownership("superposition", {
+    rarity = 2,
+    cost = 7,
+    calculate = function() end,
+})
+local old_wrap_around_staight = SMODS.wrap_around_straight
+SMODS.wrap_around_straight = function(self)
+    if next(SMODS.find_card('j_superposition')) then
+        return true
+    end
+    return old_wrap_around_staight(self)
+end

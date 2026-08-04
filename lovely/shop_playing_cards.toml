@@ -1,0 +1,60 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+
+# Set all playing cards to base cards at first
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = """
+{type = (G.GAME.used_vouchers["v_illusion"] and pseudorandom(pseudoseed('illusion')) > 0.6) and 'Enhanced' or 'Base', val = G.GAME.playing_card_rate},
+"""
+position = "at"
+payload = """
+{type = 'Base', val = G.GAME.playing_card_rate},
+"""
+match_indent = true
+
+
+# All shop playing cards are enhanced
+# Magic Trick now allows playing cards in the shop to have editions and seals
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = """
+if (v.type == 'Base' or v.type == 'Enhanced') and G.GAME.used_vouchers["v_illusion"] and pseudorandom(pseudoseed('illusion')) > 0.8 then 
+    card:set_edition(poll_edition('illusion', nil, true, true))
+end
+"""
+position = "at"
+payload = """
+if (v.type == 'Base' or v.type == 'Enhanced') then
+    local enhancement = SMODS.poll_enhancement({
+        guaranteed = true,
+        type_key = "shop_enhancement"..G.GAME.round_resets.ante,
+    })
+    card:set_ability(enhancement)
+    if G.GAME.used_vouchers["v_magic_trick"] and pseudorandom(pseudoseed('magic_trick')) > 0.8 then 
+        card:set_edition(poll_edition('magic_trick', nil, true, true))
+        card:set_seal(SMODS.poll_seal({mod = 10}), true, true)
+    end
+end
+"""
+match_indent = true
+
+
+# Illusion: When card is obtained from a Standard Pack, duplicate it
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = """
+G.deck:emplace(card)
+"""
+position = "after"
+payload = """
+if G.GAME.used_vouchers["v_illusion"] then
+    SMODS.copy_card(card)
+end
+"""
+match_indent = true

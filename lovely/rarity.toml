@@ -1,0 +1,17 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+
+# Soul's chances of appearing is now a variable instead of being hard-coded
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = """
+if pseudorandom('soul_'.._type..G.GAME.round_resets.ante) > 0.997 then
+"""
+position = "at"
+payload = """
+if pseudorandom('soul_'.._type..G.GAME.round_resets.ante) > 1 - G.GAME.starting_params.soul_chance then
+"""
+match_indent = true

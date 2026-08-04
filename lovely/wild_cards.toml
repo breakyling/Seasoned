@@ -1,0 +1,20 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+
+# Wilds can no longer be be debuffed
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = """
+function Card:set_debuff(should_debuff)
+"""
+position = "after"
+payload = """
+    if self.config.center == G.P_CENTERS.m_wild then
+        should_debuff = false
+        return
+    end
+"""
+match_indent = true

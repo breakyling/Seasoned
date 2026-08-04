@@ -1,0 +1,129 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+
+# Taken from Rebalatro
+
+
+# Boss rush on showdown ante
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = """
+G.GAME.round_resets.blind_choices.Boss = get_new_boss()
+"""
+position = "before"
+payload = """
+if SMODS.is_showdown_ante() and G.GAME.modifiers.boss_rush then
+    G.GAME.round_resets.blind_choices.Small = get_new_boss()
+    G.GAME.round_resets.blind_choices.Big = get_new_boss()
+end
+"""
+match_indent = true
+
+
+# Prevent skipping boss blinds in showdown ante
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = """
+    if type == 'Small' then
+        extras = create_UIBox_blind_tag(type, run_info)
+    elseif type == 'Big' then
+        extras = create_UIBox_blind_tag(type, run_info)
+"""
+position = "at"
+payload = """
+    if type == 'Small' and not (G.GAME.modifiers.boss_rush and SMODS.is_showdown_ante()) then
+        extras = create_UIBox_blind_tag(type, run_info)
+    elseif type == 'Big' and not (G.GAME.modifiers.boss_rush and SMODS.is_showdown_ante()) then
+        extras = create_UIBox_blind_tag(type, run_info)
+"""
+match_indent = true
+
+
+# Reroll Small and Big Blinds if they are bosses when rerolling bosses
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.GAME.round_resets.blind_choices.Boss = get_new_boss()"
+position = "after"
+payload = """
+    if G.GAME.round_resets.blind_choices.Big and G.P_BLINDS[G.GAME.round_resets.blind_choices.Big] and G.P_BLINDS[G.GAME.round_resets.blind_choices.Big].boss and G.GAME.round_resets.blind_states.Big ~= 'Defeated' and G.GAME.round_resets.blind_states.Big ~= 'Skipped' then
+        G.GAME.round_resets.blind_choices.Big = get_new_boss()
+    end
+    if G.GAME.round_resets.blind_choices.Small and G.P_BLINDS[G.GAME.round_resets.blind_choices.Small] and G.P_BLINDS[G.GAME.round_resets.blind_choices.Small].boss and G.GAME.round_resets.blind_states.Small ~= 'Defeated' and G.GAME.round_resets.blind_states.Small ~= 'Skipped' then
+        G.GAME.round_resets.blind_choices.Small = get_new_boss()
+    end
+"""
+match_indent = true
+
+
+# Animate Small and Big Blinds when rerolling bosses
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.blind_select_opts.boss.alignment.offset.y = 20"
+position = "after"
+payload = """
+if G.GAME.round_resets.blind_choices.Big and G.P_BLINDS[G.GAME.round_resets.blind_choices.Big] and G.P_BLINDS[G.GAME.round_resets.blind_choices.Big].boss and G.GAME.round_resets.blind_states.Big ~= 'Defeated' and G.GAME.round_resets.blind_states.Big ~= 'Skipped' and G.blind_select_opts.big then
+    G.blind_select_opts.big:set_role({xy_bond = 'Weak'})
+    G.blind_select_opts.big.alignment.offset.y = 20
+end
+if G.GAME.round_resets.blind_choices.Small and G.P_BLINDS[G.GAME.round_resets.blind_choices.Small] and G.P_BLINDS[G.GAME.round_resets.blind_choices.Small].boss and G.GAME.round_resets.blind_states.Small ~= 'Defeated' and G.GAME.round_resets.blind_states.Small ~= 'Skipped' and G.blind_select_opts.small then
+    G.blind_select_opts.small:set_role({xy_bond = 'Weak'})
+    G.blind_select_opts.small.alignment.offset.y = 20
+end
+"""
+match_indent = true
+
+
+# Restore UI for Small and Big Blind when rerolling bosses
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.blind_select_opts.boss.alignment.offset.y = 0"
+position = "after"
+payload = """
+if G.GAME.round_resets.blind_choices.Big and G.P_BLINDS[G.GAME.round_resets.blind_choices.Big] and G.P_BLINDS[G.GAME.round_resets.blind_choices.Big].boss and G.GAME.round_resets.blind_states.Big ~= 'Defeated' and G.GAME.round_resets.blind_states.Big ~= 'Skipped' and G.blind_select_opts.big then
+    local big_par = G.blind_select_opts.big.parent
+    G.blind_select_opts.big:remove()
+    G.blind_select_opts.big = UIBox{
+    T = {big_par.T.x, 0, 0, 0, },
+    definition =
+        {n=G.UIT.ROOT, config={align = "cm", colour = G.C.CLEAR}, nodes={
+        UIBox_dyn_container({create_UIBox_blind_choice('Big')},false,get_blind_main_colour('Big'), mix_colours(G.C.BLACK, get_blind_main_colour('Big'), 0.8))
+        }},
+    config = {align="bmi",
+            offset = {x=0,y=G.ROOM.T.y + 9},
+            major = big_par,
+            xy_bond = 'Weak'
+        }
+    }
+    big_par.config.object = G.blind_select_opts.big
+    big_par.config.object:recalculate()
+    G.blind_select_opts.big.parent = big_par
+    G.blind_select_opts.big.alignment.offset.y = 0
+end
+if G.GAME.round_resets.blind_choices.Small and G.P_BLINDS[G.GAME.round_resets.blind_choices.Small] and G.P_BLINDS[G.GAME.round_resets.blind_choices.Small].boss and G.GAME.round_resets.blind_states.Small ~= 'Defeated' and G.GAME.round_resets.blind_states.Small ~= 'Skipped' and G.blind_select_opts.small then
+    local small_par = G.blind_select_opts.small.parent
+    G.blind_select_opts.small:remove()
+    G.blind_select_opts.small = UIBox{
+    T = {small_par.T.x, 0, 0, 0, },
+    definition =
+        {n=G.UIT.ROOT, config={align = "cm", colour = G.C.CLEAR}, nodes={
+        UIBox_dyn_container({create_UIBox_blind_choice('Small')},false,get_blind_main_colour('Small'), mix_colours(G.C.BLACK, get_blind_main_colour('Small'), 0.8))
+        }},
+    config = {align="bmi",
+        offset = {x=0,y=G.ROOM.T.y + 9},
+        major = small_par,
+        xy_bond = 'Weak'
+    }}
+    small_par.config.object = G.blind_select_opts.small
+    small_par.config.object:recalculate()
+    G.blind_select_opts.small.parent = small_par
+    G.blind_select_opts.small.alignment.offset.y = 0
+end
+"""
+match_indent = true
