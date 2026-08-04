@@ -21,8 +21,8 @@ return {
             b_black = {
                 text = {
                     "+1 Joker slot",
-                    "Shop can have {C:attention}Perishable{}",
-                    "or {C:attention}Eternal{} Jokers",
+                    "Shop can have {C:attention}Eternal{}",
+                    "or {C:attention}Perishable{} Jokers",
                 },
             },
         },
