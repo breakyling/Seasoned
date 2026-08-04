@@ -80,7 +80,7 @@ A mod that attempts to rebalance Balatro.
 
 ### Loyalty Card
 - **Old:** X4 Mult every 6 hands played
-- **New:** X3 Mult every 10 hands scored
+- **New:** X3 Mult every 10 cards scored
 
 ### Superposition
 - **Old:** Create a Tarot card if poker hand contains an Ace and a Straight
