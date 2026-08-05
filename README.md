@@ -60,6 +60,17 @@ A mod that attempts to rebalance Balatro.
 - **New:** When you obtain a playing card from the shop or from a Standard Pack, get an extra copy of the card
 
 
+## Consumeables Changes
+
+### Earth
+- Mult Decrease: +2 Mult -> +3 Mult
+- Chips Increase: +25 Chips -> 30 Chips
+
+### Immolate
+- Cards Removed: 5 -> 3
+- Money Gain: $20 -> $10
+
+
 ## Seal Changes
 
 ### Blue Seal
