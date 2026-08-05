@@ -25,7 +25,7 @@ A mod that attempts to rebalance Balatro.
 
 ### Gold Stake
 - **Old:** Shop can have Rental Jokers
-- **New:** All Blinds in last Ante are Boss Blinds
+- **New:** Beat Ante 10 to win
 
 
 ## Deck Changes
