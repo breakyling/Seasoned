@@ -19,7 +19,7 @@ hands = 3,
 match_indent = true
 
 
-# Add blind_reward_bonus, rare_chance, and soul_chance as new starting parameters
+# Add blind_reward_bonus as a new starting parameter
 [[patches]]
 [patches.pattern]
 target = "functions/misc_functions.lua"
@@ -29,12 +29,6 @@ vouchers_in_shop = 1,
 position = "after"
 payload = """
 blind_reward_bonus = 0,
-rare_chance = {
-    base = 0.05,
-    pity = -0.05,
-    increment = 0.01,
-},
-soul_chance = 0.003,
 """
 match_indent = true
 

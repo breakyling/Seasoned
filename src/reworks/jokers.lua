@@ -38,17 +38,7 @@ SMODS.Joker:take_ownership("gluttenous_joker", {
     },
 })
 
--- Buffed Satellite: Money gain increased from $1 to $2
-SMODS.Joker:take_ownership("satellite", {
-    config = {extra = 2},
-})
-
--- Nerfed Photograph: Common -> Uncommon
-SMODS.Joker:take_ownership("photograph", {
-    rarity = 2,
-})
-
--- Nerfed Hanging Chad: Common -> Uncommon
+-- Nerfed Hanging Chad: Common ($4) -> Uncommon ($5)
 SMODS.Joker:take_ownership("hanging_chad", {
     rarity = 2,
     cost = 5,
@@ -100,11 +90,11 @@ Changed Superposition
 - Old: Create a Tarot card if poker hand contains an Ace and a Straight
 - New: Straights can wrap around
 - Rarity increased from Common to Uncommon
-- Cost increased from $4 to $7
+- Cost increased from $4 to $5
 ]]
 SMODS.Joker:take_ownership("superposition", {
     rarity = 2,
-    cost = 7,
+    cost = 5,
     calculate = function() end,
 })
 local old_wrap_around_staight = SMODS.wrap_around_straight

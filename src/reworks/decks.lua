@@ -41,21 +41,18 @@ SMODS.Back:take_ownership("yellow", {
 --[[
 Changed Black Deck:
 - Old: +1 Joker slot, -1 hand every round
-- New: +1 Joker slot, Shop Jokers can be Eternal or Perishable
+- New: +1 Joker slot, -1 discard every round
 ]]
 SMODS.Back:take_ownership("black", {
     config = {
         joker_slot = 1,
+        discards = -1,
     },
 
     loc_vars = function(self, info_queue, card)
         return {vars = {
             self.config.joker_slot,
+            math.abs(self.config.discards),
         }}
-    end,
-
-    apply = function(self, back)
-        G.GAME.modifiers.enable_eternals_in_shop = true
-        G.GAME.modifiers.enable_perishables_in_shop = true
     end,
 })

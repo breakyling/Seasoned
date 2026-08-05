@@ -3,23 +3,6 @@ version = "1.0.0"
 priority = 0
 
 
-# If a Joker has config.extra.force_cost = true, then its set cost cannot be overriden
-[[patches]]
-[patches.pattern]
-target = "card.lua"
-pattern = """
-function Card:set_cost_value()
-"""
-position = "after"
-payload = """
-    if self.ability.extra and type(self.ability.extra) == "table" and self.ability.extra.force_cost then
-        self.cost = self.base_cost
-        return
-    end
-"""
-match_indent = true
-
-
 # Perishable Jokers now cost half as much
 [[patches]]
 [patches.pattern]

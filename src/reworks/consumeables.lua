@@ -10,6 +10,18 @@ SMODS.PokerHand:take_ownership("Full House", {
 
 
 --[[
+Buffed Lovers
+- Increased max cards from 1 to 2
+]]
+SMODS.Consumable:take_ownership("lovers", {
+    config = {
+        mod_conv = 'm_wild',
+        max_highlighted = 2,
+    },
+})
+
+
+--[[
 Nerfed Immolate:
 - Old: Destroy 5 random cards in hand, gain $20
 - New: Destory 3 random cards in hand, gain $10

@@ -11,44 +11,13 @@ SMODS.Stake:take_ownership("red", {
 
 
 --[[
-Changed Black Stake:
-- Old: Shop can have Eternal Jokers
-- New: Start with 8 Eternal Bricks in your deck
-]]
-SMODS.Stake:take_ownership("black", {
-    modifiers = function()
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                for _ = 1, 2 do
-                    for key, _ in pairs(SMODS.Suits) do
-                        local brick = SMODS.create_card({
-                            set = "Base",
-                            rank = "2",
-                            suit = key,
-                            enhancement = "m_ssnd_brick",
-                            key_append = "black_stake",
-                        })
-                        brick.ability.eternal = true
-                        SMODS.add_to_deck(brick, {area = G.deck})
-                    end
-                end
-                return true
-            end
-        }))
-    end,
-})
-
-
---[[
 Changed Blue Stake:
 - Old: -1 discard
-- New: Rare and Legendary jokers appear half as often
+- New: Shop can have Perishable Jokers
 ]]
 SMODS.Stake:take_ownership("blue", {
     modifiers = function()
-        G.GAME.starting_params.rare_chance.base = G.GAME.starting_params.rare_chance.base / 2
-        G.GAME.starting_params.rare_chance.increment = G.GAME.starting_params.rare_chance.increment / 2
-        G.GAME.starting_params.soul_chance = G.GAME.starting_params.soul_chance / 2
+        G.GAME.modifiers.enable_perishables_in_shop = true
     end,
 })
 
@@ -56,11 +25,11 @@ SMODS.Stake:take_ownership("blue", {
 --[[
 Changed Orange Stake:
 - Old: Shop can have Perishable Jokers
-- New: Beat Ante 10 to win
+- New: Shop can have Rental Jokers
 ]]
 SMODS.Stake:take_ownership("orange", {
     modifiers = function()
-        G.GAME.win_ante = 10
+        G.GAME.modifiers.enable_eternals_in_shop = true
     end,
 })
 

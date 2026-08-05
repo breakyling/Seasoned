@@ -5,9 +5,7 @@ A mod that attempts to rebalance Balatro.
 
 ## Base Game Changes
 - 4 hands, 3 discards -> 3 hands, 4 discards
-- Wild cards can no longer debuffed
 - Standard Packs will now always have Enhanced cards
-- Added pity system for Rare Jokers
 
 
 ## Stake Changes
@@ -16,18 +14,14 @@ A mod that attempts to rebalance Balatro.
 - **Old:** Small Blinds give no reward money
 - **New:** Blinds give $1 less
 
-### Black Stake
-- **Old:** Shop can have Eternal Jokers
-- **New:** Start with 8 Eternal Bricks in your deck
-- Bricks are cards that never score, have no rank or suit, and cannot change enhancements
-
 ### Blue Stake
 - **Old:** -1 discard
-- **New:** Rare and Legendary jokers appear half as often
+- **New:** Shop can have Perishable Jokers
 
 ### Orange Stake
 - **Old:** Shop can have Perishable Jokers
-- **New:** Beat Ante 10 to win
+- **New:** Shop can have Rental Jokers
+- Rental Jokers can only appear starting Ante 2
 
 ### Gold Stake
 - **Old:** Shop can have Rental Jokers
@@ -46,7 +40,7 @@ A mod that attempts to rebalance Balatro.
 
 ### Black Deck
 - **Old:** +1 Joker slot, -1 hand each round
-- **New:** +1 Joker slot, Shops can have Eternal or Perishable Jokers
+- **New:** +1 Joker slot, -1 discard each round
 
 
 ## Voucher Changes
@@ -70,6 +64,9 @@ A mod that attempts to rebalance Balatro.
 - Cards Removed: 5 -> 3
 - Money Gain: $20 -> $10
 
+## Lovers
+- Max Cards: 1 -> 2
+
 
 ## Seal Changes
 
@@ -83,15 +80,9 @@ A mod that attempts to rebalance Balatro.
 ### Greedy/Lusty/Wrathful/Gluttenous Joker
 - +3 Mult -> +4 Mult
 
-### Satellite
-- **Money Gain:** $1 -> $2 per unique planet
-
-### Photograph
-- Rarity: Commmon -> Uncommon
-
 ### Hanging Chad
 - **Rarity:** Common -> Uncommon
-- **Cost:** $4 -> $5
+- **Cost:** $4 -> $6
 
 ### Mail-In Rebate
 - **Money Gain:** $5 -> $2
@@ -104,25 +95,4 @@ A mod that attempts to rebalance Balatro.
 - **Old:** Create a Tarot card if poker hand contains an Ace and a Straight
 - **New:** Straights can wrap around (ex: 3 2 A K Q)
 - **Rarity:** Common -> Uncommon
-- **Cost:** $4 -> $7
-
-
-## New Jokers
-
-### Farmer Joker (Common, $4)
-- +1 discard limit
-
-### Startup Fund (Common, $0)
-- Gain $10
-- Always spawns as Eternal
-
-### Seasonal Joker (Uncommon, $5)
-- Create a suit-changing Tarot card when Blind is selected
-- The created Tarot card sells for $0
-
-### Golden Thumb (Uncommon, $6)
-- +2 hand size if at least 1 Gold card is held in hand
-
-### Harvesting Scythe (Rare, $8)
-- Draw 4 additional cards at the start of each round
-- +4 discard limit on the first discard of each round
+- **Cost:** $4 -> $5
