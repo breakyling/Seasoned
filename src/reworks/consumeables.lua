@@ -15,8 +15,8 @@ Nerfed Immolate:
 - New: Destory 3 random cards in hand, gain $10
 ]]
 SMODS.Consumable:take_ownership("immolate", {
-    config = {
+    config = {extra = {
         destroy = 3,
         dollars = 10,
-    },
+    }},
 })
