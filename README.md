@@ -64,7 +64,7 @@ A mod that attempts to rebalance Balatro.
 - Cards Removed: 5 -> 3
 - Money Gain: $20 -> $10
 
-## Lovers
+### Lovers
 - Max Cards: 1 -> 2
 
 
