@@ -21,7 +21,7 @@ return {
             b_black = {
                 text = {
                     "{C:attention}+#1#{} Joker slot",
-                    "{C:blue}-#2#{} discard",
+                    "{C:red}-#2#{} discard",
                     "every round",
                 },
             },
