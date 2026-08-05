@@ -56,7 +56,7 @@ Changed Loyalty Card
 ]]
 SMODS.Joker:take_ownership("loyalty_card", {
     config = {extra = {
-        Xmult = 3,
+        xmult = 3,
         every = 10,
         remaining = 10,
     }},
@@ -64,7 +64,7 @@ SMODS.Joker:take_ownership("loyalty_card", {
     loc_vars = function(self, info_queue, card)
         return {
             vars = {
-                card.ability.extra.Xmult,
+                card.ability.extra.xmult,
                 card.ability.extra.every,
                 card.ability.extra.remaining,
             },
@@ -73,13 +73,17 @@ SMODS.Joker:take_ownership("loyalty_card", {
 
     calculate = function(self, card, context)
         if context.cardarea == G.play and context.individual then
-            if card.ability.extra.remaining == 1 then
-                card.ability.extra.remaining = 10
-                return {
-                    xmult = card.ability.extra.Xmult,
-                }
+            if context.blueprint then
+                if context.blueprint_card.ability.extra.remaining == 1 then
+                    return {xmult = context.blueprint_card.ability.extra.xmult}
+                end
             else
-                card.ability.extra.remaining = card.ability.extra.remaining - 1
+                if card.ability.extra.remaining == 1 then
+                    card.ability.extra.remaining = card.ability.extra.every
+                    return {xmult = card.ability.extra.xmult}
+                else
+                    card.ability.extra.remaining = card.ability.extra.remaining - 1
+                end
             end
         end
     end,

@@ -65,8 +65,7 @@ return {
             },
             stake_gold = {
                 text = {
-                    "All {C:attention}Blinds{} in final {C:attention}Ante{}",
-                    "are {C:attention}Boss Blinds{}",
+                    "Beat {C:attention}Ante 10{} to win",
                     "{s:0.8}Applies all previous Stakes{}",
                 },
             },

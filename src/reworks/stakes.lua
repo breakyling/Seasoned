@@ -37,10 +37,10 @@ SMODS.Stake:take_ownership("orange", {
 --[[
 Changed Gold Stake:
 - Old: Shop can have Rental Jokers
-- New: All Blinds in last ante are Boss Blinds
+- New: Beat Ante 10 to win
 ]]
 SMODS.Stake:take_ownership("gold", {
     modifiers = function()
-        G.GAME.modifiers.boss_rush = true
+        G.GAME.win_ante = 10
     end,
 })
