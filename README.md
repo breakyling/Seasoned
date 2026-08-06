@@ -17,11 +17,12 @@ A mod that attempts to rebalance Balatro.
 ### Blue Stake
 - **Old:** -1 discard
 - **New:** Shop can have Perishable Jokers
+- Perishable Jokers now cost half their original price
 
 ### Orange Stake
 - **Old:** Shop can have Perishable Jokers
 - **New:** Shop can have Rental Jokers
-- Rental Jokers can only appear starting Ante 2
+- Rental Jokers can now only appear starting Ante 2
 
 ### Gold Stake
 - **Old:** Shop can have Rental Jokers
@@ -60,12 +61,12 @@ A mod that attempts to rebalance Balatro.
 - Mult Decrease: +2 Mult -> +3 Mult
 - Chips Increase: +25 Chips -> 30 Chips
 
+### Lovers
+- Max Cards: 1 -> 2
+
 ### Immolate
 - Cards Removed: 5 -> 3
 - Money Gain: $20 -> $10
-
-### Lovers
-- Max Cards: 1 -> 2
 
 
 ## Seal Changes
