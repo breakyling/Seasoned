@@ -69,13 +69,6 @@ A mod that attempts to rebalance Balatro.
 - Money Gain: $20 -> $10
 
 
-## Seal Changes
-
-### Blue Seal
-- **Old:** Creates the Planet card for final played poker hand of round if held in hand (Must have room)
-- **New:** Drawn first when Blind is selected
-
-
 ## Joker Changes
 
 ### Greedy/Lusty/Wrathful/Gluttenous Joker

@@ -101,15 +101,6 @@ return {
                 },
             },
         },
-        Other = {
-            blue_seal = {
-                name = "Blue Seal",
-                text = {
-                    "Drawn first when",
-                    "{C:attention}Blind{} is selected",
-                },
-            },
-        },
     },
     misc = {
         dictionary = {
