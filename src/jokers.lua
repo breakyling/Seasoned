@@ -59,6 +59,7 @@ SMODS.Joker:take_ownership("loyalty_card", {
         xmult = 3,
         every = 10,
         remaining = 10,
+        active = false,
     }},
 
     loc_vars = function(self, info_queue, card)
@@ -72,7 +73,7 @@ SMODS.Joker:take_ownership("loyalty_card", {
     end,
 
     calculate = function(self, card, context)
-        if context.cardarea == G.play and context.main_scoring then
+        if context.cardarea == G.play and context.individual then
             card.ability.extra.remaining = card.ability.extra.remaining - 1
 
             if card.ability.extra.remaining <= 0 then
@@ -99,12 +100,12 @@ SMODS.Joker:take_ownership("superposition", {
     rarity = 2,
     cost = 5,
     blueprint_compat = false,
-    calculate = function() end,
+    calculate = function() return {} end,
 })
-local old_wrap_around_staight = SMODS.wrap_around_straight
+local old_wrap_around_straight = SMODS.wrap_around_straight
 SMODS.wrap_around_straight = function(self)
     if next(SMODS.find_card('j_superposition')) then
         return true
     end
-    return old_wrap_around_staight(self)
+    return old_wrap_around_straight(self)
 end

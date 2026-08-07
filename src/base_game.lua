@@ -1,5 +1,5 @@
 -- Change starting params
-local old_get_starting_params = old_get_starting_params
+local old_get_starting_params = get_starting_params
 
 get_starting_params = function()
     local starting_params = old_get_starting_params()

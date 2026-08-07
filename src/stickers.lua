@@ -13,6 +13,6 @@ local old_set_cost_value = Card.set_cost_value
 Card.set_cost_value = function(self)
     old_set_cost_value(self)
     if self.ability.perishable and not self.ability.rental then
-        self.cost = self.cost / 2
+        self.cost = math.floor(self.cost / 2)
     end
 end
