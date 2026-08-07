@@ -19,26 +19,6 @@ SMODS.Back:take_ownership("blue", {
 
 
 --[[
-Changed Yellow Deck:
-- Old: Start with extra $10
-- New: Start with extra $15, Blinds give $1 less
-]]
-SMODS.Back:take_ownership("yellow", {
-    config = {
-        dollars = 15,
-        blind_reward_bonus = -1,
-    },
-
-    loc_vars = function(self, info_queue, card)
-        return {vars = {
-            self.config.dollars,
-            math.abs(self.config.blind_reward_bonus),
-        }}
-    end,
-})
-
-
---[[
 Changed Black Deck:
 - Old: +1 Joker slot, -1 hand every round
 - New: +1 Joker slot, -1 discard every round

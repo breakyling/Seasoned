@@ -1,21 +1,12 @@
 return {
     descriptions = {
         Back = {
-            b_red = {
-                text = {
-                    "{C:red}+#1#{} discard every round",
-                },
-            },
             b_blue = {
                 text = {
-                    "{C:blue}+#1#{} hands every round",
-                    "{C:red}-#2#{} discards every round",
-                },
-            },
-            b_yellow = {
-                text = {
-                    "Start with extra {C:money}$#1#{}",
-                    "Blinds give {C:money}$#2#{} less",
+                    "{C:blue}+#1#{} hands",
+                    "every round",
+                    "{C:red}-#2#{} discards",
+                    "every round",
                 },
             },
             b_black = {

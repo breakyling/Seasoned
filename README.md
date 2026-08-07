@@ -35,10 +35,6 @@ A mod that attempts to rebalance Balatro.
 - **Old:** +1 hand each round
 - **New:** +2 hands each round, -2 discards each round
 
-### Yellow Deck
-- **Old:** Start with extra $10
-- **New:** Start with extra $15, Blinds give $1 less
-
 ### Black Deck
 - **Old:** +1 Joker slot, -1 hand each round
 - **New:** +1 Joker slot, -1 discard each round
