@@ -67,7 +67,11 @@ SMODS.Joker:take_ownership("loyalty_card", {
             vars = {
                 card.ability.extra.xmult,
                 card.ability.extra.every,
-                card.ability.extra.remaining,
+                localize{
+                    type = 'variable',
+                    key = 'loyalty_inactive',
+                    vars = {card.ability.extra.remaining}
+                },
             },
         }
     end,
@@ -101,6 +105,11 @@ SMODS.Joker:take_ownership("superposition", {
     cost = 5,
     blueprint_compat = false,
     calculate = function() return {} end,
+
+    joker_display_def = function()
+        --@type JDJokerDefinition
+        return {text = {}, reminder_text = {}}
+    end,
 })
 local old_wrap_around_straight = SMODS.wrap_around_straight
 SMODS.wrap_around_straight = function(self)

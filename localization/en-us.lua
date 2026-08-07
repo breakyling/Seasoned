@@ -22,7 +22,7 @@ return {
                 text = {
                     "{X:mult,C:white}X#1#{} Mult every",
                     "{C:attention}#2#{} cards scored",
-                    "{C:inactive}(#3# remaining){}",
+                    "{C:inactive}(#3#){}",
                 },
             },
             j_superposition = {
