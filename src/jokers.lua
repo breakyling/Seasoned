@@ -38,10 +38,16 @@ SMODS.Joker:take_ownership("gluttenous_joker", {
     },
 })
 
--- Nerfed Hanging Chad: Common ($4) -> Uncommon ($5)
+-- Nerfed Photograph: Common ($4) -> Uncommon ($5)
 SMODS.Joker:take_ownership("hanging_chad", {
     rarity = 2,
     cost = 5,
+})
+
+-- Nerfed Hanging Chad: Common ($4) -> Uncommon ($6)
+SMODS.Joker:take_ownership("hanging_chad", {
+    rarity = 2,
+    cost = 6,
 })
 
 -- Nerfed Mail and Rebate: Money gain reduced from $5 to $2
@@ -51,10 +57,12 @@ SMODS.Joker:take_ownership("mail", {
 
 --[[
 Changed Loyalty Card
-- Old: x3 Mult for every hands played
-- New: x3 Mult for every 10 cards scored
+- Old: x3 Mult for every hands played ($5)
+- New: x3 Mult for every 10 cards scored ($6)
 ]]
 SMODS.Joker:take_ownership("loyalty_card", {
+    cost = 6,
+
     config = {extra = {
         xmult = 3,
         every = 10,

@@ -70,6 +70,10 @@ A mod that attempts to rebalance Balatro.
 ### Greedy/Lusty/Wrathful/Gluttenous Joker
 - +3 Mult -> +4 Mult
 
+### Photograph
+- **Rarity:** Common -> Uncommon
+- **Cost:** $4 -> $5
+
 ### Hanging Chad
 - **Rarity:** Common -> Uncommon
 - **Cost:** $4 -> $6
@@ -80,6 +84,7 @@ A mod that attempts to rebalance Balatro.
 ### Loyalty Card
 - **Old:** X4 Mult every 6 hands played
 - **New:** X3 Mult every 10 cards scored
+- **Cost:** $5 -> $6
 
 ### Superposition
 - **Old:** Create a Tarot card if poker hand contains an Ace and a Straight
