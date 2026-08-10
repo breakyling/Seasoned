@@ -40,31 +40,6 @@ A mod that attempts to rebalance Balatro.
 - **New:** +1 Joker slot, -1 discard each round
 
 
-## Voucher Changes
-
-### Magic Trick
-- **Old:** Playing cards can be purchased from the shop
-- **New:** Enhanced playing cards can be purchased from the shop (Playing cards may have an Edition and/or Seal)
-
-### Illusion
-- **Old:** Playing cards in shop may have an Enhancement, Edition, and/or a Seal
-- **New:** When you obtain a playing card from the shop or from a Standard Pack, get an extra copy of the card
-
-
-## Consumeables Changes
-
-### Earth
-- Mult Decrease: +2 Mult -> +3 Mult
-- Chips Increase: +25 Chips -> 30 Chips
-
-### Lovers
-- Max Cards: 1 -> 2
-
-### Immolate
-- Cards Removed: 5 -> 3
-- Money Gain: $20 -> $10
-
-
 ## Joker Changes
 
 ### Greedy/Lusty/Wrathful/Gluttenous Joker
@@ -91,3 +66,61 @@ A mod that attempts to rebalance Balatro.
 - **New:** Straights can wrap around (ex: 3 2 A K Q)
 - **Rarity:** Common -> Uncommon
 - **Cost:** $4 -> $5
+
+
+## Consumeable Changes
+
+### Earth
+- Mult Decrease: +2 Mult -> +3 Mult
+- Chips Increase: +25 Chips -> 30 Chips
+
+### Lovers
+- Max Cards: 1 -> 2
+
+### Immolate
+- Cards Removed: 5 -> 3
+- Money Gain: $20 -> $10
+
+
+## Voucher Changes
+
+### Magic Trick
+- **Old:** Playing cards can be purchased from the shop
+- **New:** Enhanced playing cards can be purchased from the shop (Playing cards may have an Edition and/or Seal)
+
+### Illusion
+- **Old:** Playing cards in shop may have an Enhancement, Edition, and/or a Seal
+- **New:** When you obtain a playing card from the shop or from a Standard Pack, get an extra copy of the card
+
+
+## Tag Changes
+
+### Uncommon Tag
+- **Old:** Shop has a free Uncommon Joker
+- **New:** Gives a free Uncommon Buffoon Pack
+    - Choose 1 of up to 2 Uncommon Joker cards
+
+### Rare Tag
+- **Old:** Shop has a free Rare Joker
+- **New:** Gives a free Uncommon Buffoon Pack
+    - Choose 1 of up to 2 Rare Joker cards
+
+### Foil Tag
+- **Old:** Next base edition shop Joker is free and becomes Foil
+- **New:** Gives a free Foil Buffoon Pack
+    - Choose 1 of up to 2 Foil Joker cards
+
+### Holographic Tag
+- **Old:** Next base edition shop Joker is free and becomes Holographic
+- **New:** Gives a free Holographic Buffoon Pack
+    - Choose 1 of up to 2 Holographic Joker cards
+
+### Polychrome Tag
+- **Old:** Next base edition shop Joker is free and becomes Polychrome
+- **New:** Gives a free Polychrome Buffoon Pack
+    - Choose 1 of up to 2 Polychrome Joker cards
+
+### Uncommon Tag
+- **Old:** Next base edition shop Joker is free and becomes Negative
+- **New:** Gives a free Negative Buffoon Pack
+    - Choose 1 of up to 2 Negative Joker cards

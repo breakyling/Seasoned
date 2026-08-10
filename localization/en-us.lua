@@ -61,6 +61,50 @@ return {
                 },
             },
         },
+        Tag = {
+            tag_uncommon = {
+                name = "Uncommon Tag",
+                text = {
+                    "Gives a free",
+                    "{C:attention}Uncommon Buffoon Pack{}",
+                },
+            },
+            tag_rare = {
+                name = "Rare Tag",
+                text = {
+                    "Gives a free",
+                    "{C:attention}Rare Buffoon Pack{}",
+                },
+            },
+            tag_foil = {
+                name = "Foil Tag",
+                text = {
+                    "Gives a free",
+                    "{C:attention}Foil Buffoon Pack{}",
+                },
+            },
+            tag_holo = {
+                name = "Holographic Tag",
+                text = {
+                    "Gives a free",
+                    "{C:attention}Holographic Buffoon Pack{}",
+                },
+            },
+            tag_polychrome = {
+                name = "Polychrome Tag",
+                text = {
+                    "Gives a free",
+                    "{C:attention}Polychrome Buffoon Pack{}",
+                },
+            },
+            tag_negative = {
+                name = "Negative Tag",
+                text = {
+                    "Gives a free",
+                    "{C:attention}Negative Buffoon Pack{}",
+                },
+            },
+        },
         Tarot = {
             c_lovers = {
                 name = "The Lovers",
@@ -92,10 +136,49 @@ return {
                 },
             },
         },
-    },
-    misc = {
-        dictionary = {
-            k_inactive = "inactive",
+        Other = {
+            p_ssnd_buffoon_uncommon = {
+                name = "Uncommon Buffoon Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{} {C:green}Uncommon{} {C:joker}Jokers{}",
+                },
+            },
+            p_ssnd_buffoon_rare = {
+                name = "Rare Buffoon Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{} {C:red}Rare{} {C:joker}Joker{} cards",
+                },
+            },
+            p_ssnd_buffoon_foil = {
+                name = "Foil Buffoon Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{} {C:dark_edition}Foil{} {C:joker}Joker{} cards",
+                },
+            },
+            p_ssnd_buffoon_holographic = {
+                name = "Holographic Buffoon Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{} {C:dark_edition}Holographic{} {C:joker}Joker{} cards",
+                },
+            },
+            p_ssnd_buffoon_polychrome = {
+                name = "Polychrome Buffoon Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{} {C:dark_edition}Polychrome{} {C:joker}Joker{} cards",
+                },
+            },
+            p_ssnd_buffoon_negative = {
+                name = "Negative Buffoon Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{} {C:dark_edition}Negative{} {C:joker}Joker{} cards",
+                },
+            },
         },
     },
 }
