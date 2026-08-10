@@ -78,8 +78,7 @@ A mod that attempts to rebalance Balatro.
 - Max Cards: 1 -> 2
 
 ### Immolate
-- Cards Removed: 5 -> 3
-- Money Gain: $20 -> $10
+- Money Gain: $20 -> $5
 
 
 ## Voucher Changes

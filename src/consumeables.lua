@@ -24,14 +24,14 @@ SMODS.Consumable:take_ownership("lovers", {
 --[[
 Nerfed Immolate:
 - Old: Destroy 5 random cards in hand, gain $20
-- New: Destory 3 random cards in hand, gain $10
+- New: Destory 5 random cards in hand, gain $5
 ]]
 SMODS.Consumable:take_ownership("immolate", {
     config = {
         remove_card = true,
         extra = {
-            destroy = 3,
-            dollars = 10,
+            destroy = 5,
+            dollars = 5,
         },
     },
 })
