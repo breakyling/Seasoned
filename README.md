@@ -94,6 +94,9 @@ A mod that attempts to rebalance Balatro.
 
 ## Tag Changes
 
+### Double Tag
+- Now longer appears as a skip tag
+
 ### Uncommon Tag
 - **Old:** Shop has a free Uncommon Joker
 - **New:** Gives a free Uncommon Buffoon Pack
