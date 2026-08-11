@@ -39,7 +39,7 @@ SMODS.Joker:take_ownership("gluttenous_joker", {
 })
 
 -- Nerfed Photograph: Common ($4) -> Uncommon ($5)
-SMODS.Joker:take_ownership("hanging_chad", {
+SMODS.Joker:take_ownership("photograph", {
     rarity = 2,
     cost = 5,
 })
