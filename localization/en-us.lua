@@ -63,42 +63,36 @@ return {
         },
         Tag = {
             tag_uncommon = {
-                name = "Uncommon Tag",
                 text = {
                     "Gives a free",
                     "{C:attention}Uncommon Buffoon Pack{}",
                 },
             },
             tag_rare = {
-                name = "Rare Tag",
                 text = {
                     "Gives a free",
                     "{C:attention}Rare Buffoon Pack{}",
                 },
             },
             tag_foil = {
-                name = "Foil Tag",
                 text = {
                     "Gives a free",
                     "{C:attention}Foil Buffoon Pack{}",
                 },
             },
             tag_holo = {
-                name = "Holographic Tag",
                 text = {
                     "Gives a free",
                     "{C:attention}Holographic Buffoon Pack{}",
                 },
             },
             tag_polychrome = {
-                name = "Polychrome Tag",
                 text = {
                     "Gives a free",
                     "{C:attention}Polychrome Buffoon Pack{}",
                 },
             },
             tag_negative = {
-                name = "Negative Tag",
                 text = {
                     "Gives a free",
                     "{C:attention}Negative Buffoon Pack{}",

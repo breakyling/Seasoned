@@ -29,6 +29,7 @@ SMODS.Booster {
     pos = {x = 2, y = 8},
     config = {extra = 2, choose = 1},
     discovered = true,
+    no_collection = true,
     weight = 0,
 
     loc_vars = function(self, info_queue, card)
@@ -56,6 +57,7 @@ SMODS.Booster {
     pos = {x = 2, y = 8},
     config = {extra = 2, choose = 1},
     discovered = true,
+    no_collection = true,
     weight = 0,
 
     loc_vars = function(self, info_queue, card)
@@ -83,6 +85,7 @@ SMODS.Booster {
     pos = {x = 2, y = 8},
     config = {extra = 2, choose = 1},
     discovered = true,
+    no_collection = true,
     weight = 0,
 
     loc_vars = function(self, info_queue, card)
@@ -110,6 +113,7 @@ SMODS.Booster {
     pos = {x = 2, y = 8},
     config = {extra = 2, choose = 1},
     discovered = true,
+    no_collection = true,
     weight = 0,
 
     loc_vars = function(self, info_queue, card)
@@ -137,6 +141,7 @@ SMODS.Booster {
     pos = {x = 2, y = 8},
     config = {extra = 2, choose = 1},
     discovered = true,
+    no_collection = true,
     weight = 0,
 
     loc_vars = function(self, info_queue, card)
@@ -164,6 +169,7 @@ SMODS.Booster {
     pos = {x = 2, y = 8},
     config = {extra = 2, choose = 1},
     discovered = true,
+    no_collection = true,
     weight = 0,
 
     loc_vars = function(self, info_queue, card)

@@ -98,28 +98,34 @@ A mod that attempts to rebalance Balatro.
 - **Old:** Shop has a free Uncommon Joker
 - **New:** Gives a free Uncommon Buffoon Pack
     - Choose 1 of up to 2 Uncommon Joker cards
+- Now only appears starting Ante 2
 
 ### Rare Tag
 - **Old:** Shop has a free Rare Joker
 - **New:** Gives a free Uncommon Buffoon Pack
     - Choose 1 of up to 2 Rare Joker cards
+- Now only appears starting Ante 2
 
 ### Foil Tag
 - **Old:** Next base edition shop Joker is free and becomes Foil
 - **New:** Gives a free Foil Buffoon Pack
     - Choose 1 of up to 2 Foil Joker cards
+- Now only appears starting Ante 2
 
 ### Holographic Tag
 - **Old:** Next base edition shop Joker is free and becomes Holographic
 - **New:** Gives a free Holographic Buffoon Pack
     - Choose 1 of up to 2 Holographic Joker cards
+- Now only appears starting Ante 2
 
 ### Polychrome Tag
 - **Old:** Next base edition shop Joker is free and becomes Polychrome
 - **New:** Gives a free Polychrome Buffoon Pack
     - Choose 1 of up to 2 Polychrome Joker cards
+- Now only appears starting Ante 2
 
-### Uncommon Tag
+### Negative Tag
 - **Old:** Next base edition shop Joker is free and becomes Negative
 - **New:** Gives a free Negative Buffoon Pack
     - Choose 1 of up to 2 Negative Joker cards
+- Now only appears starting Ante 2

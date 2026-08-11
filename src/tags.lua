@@ -1,4 +1,21 @@
+--[[
+Changed Double Tag
+- No longer appears as a Skip Tag
+]]
+SMODS.Tag:take_ownership("double", {
+    in_pool = function(self, args) return false end,
+})
+
+
+--[[
+Changed Uncommon Tag
+- Old: Shop has a free Uncommon Joker
+- New: Gives a free Uncommon Buffoon Pack (Choose 1 of up to 2 Uncommon Joker cards)
+- Now only appears starting Ante 2
+]]
 SMODS.Tag:take_ownership("uncommon", {
+    min_ante = 2,
+
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_ssnd_buffoon_uncommon
     end,
@@ -27,7 +44,15 @@ SMODS.Tag:take_ownership("uncommon", {
 })
 
 
+--[[
+Changed Rare Tag
+- Old: Shop has a free Rare Joker
+- New: Gives a free Rare Buffoon Pack (Choose 1 of up to 2 Rare Joker cards)
+- Now only appears starting Ante 2
+]]
 SMODS.Tag:take_ownership("rare", {
+    min_ante = 2,
+
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_ssnd_buffoon_rare
     end,
@@ -56,7 +81,15 @@ SMODS.Tag:take_ownership("rare", {
 })
 
 
+--[[
+Changed Foil Tag
+- Old: Next base edition shop Joker is free and becomes Foil
+- New: Gives a free Foil Buffoon Pack (Choose 1 of up to 2 Foil Joker cards)
+- Now only appears starting Ante 2
+]]
 SMODS.Tag:take_ownership("foil", {
+    min_ante = 2,
+
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_ssnd_buffoon_foil
     end,
@@ -85,7 +118,15 @@ SMODS.Tag:take_ownership("foil", {
 })
 
 
+--[[
+Changed Holographic Tag
+- Old: Next base edition shop Joker is free and becomes Holographic
+- New: Gives a free Holographic Buffoon Pack (Choose 1 of up to 2 Holographic Joker cards)
+- Now only appears starting Ante 2
+]]
 SMODS.Tag:take_ownership("holo", {
+    min_ante = 2,
+
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_ssnd_holographic
     end,
@@ -114,7 +155,15 @@ SMODS.Tag:take_ownership("holo", {
 })
 
 
+--[[
+Changed Polychrome Tag
+- Old: Next base edition shop Joker is free and becomes Polychrome
+- New: Gives a free Polychrome Buffoon Pack (Choose 1 of up to 2 Polychrome Joker cards)
+- Now only appears starting Ante 2
+]]
 SMODS.Tag:take_ownership("polychrome", {
+    min_ante = 2,
+
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_ssnd_buffoon_polychrome
     end,
@@ -143,7 +192,15 @@ SMODS.Tag:take_ownership("polychrome", {
 })
 
 
+--[[
+Changed Negative Tag
+- Old: Next base edition shop Joker is free and becomes Negative
+- New: Gives a free Negative Buffoon Pack (Choose 1 of up to 2 Negative Joker cards)
+- Now only appears starting Ante 2
+]]
 SMODS.Tag:take_ownership("negative", {
+    min_ante = 2,
+
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_ssnd_buffoon_negative
     end,
